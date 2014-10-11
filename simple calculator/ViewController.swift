@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     var lbResult:UILabel!;
     var btReset:UIButton!;
     
+    var screenSize:CGRect = UIScreen.mainScreen().bounds;
     var screenWidth:CGFloat!;
     var screenHeight:CGFloat!;
     
@@ -32,10 +33,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        screenWidth = UIScreen.mainScreen().bounds.width;
-        screenHeight = UIScreen.mainScreen().bounds.height;
+        screenWidth = screenSize.width;
+        screenHeight = screenSize.height;
+        
+        let screenSize2: CGRect = UIScreen.mainScreen().bounds
+        let screenWidth2 = screenSize2.width;
+        let screenHeight2 = screenSize2.height;
+        //screenWidth = UIScreen.mainScreen().bounds.width;
+        //screenHeight = UIScreen.mainScreen().bounds.height;
         println(NSString(format: "%f", screenWidth));
         println(NSString(format: "%f", screenHeight));
+        
+        println(NSString(format: "%f", screenWidth2));
+        println(NSString(format: "%f", screenHeight2));
         
         bindWidget();
     }
